@@ -1,0 +1,59 @@
+<html>
+<head>
+Time Calculator
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="Starttime()">Start time</button>
+<button onclick="Stoptime()">Stop time</button>
+
+<script>
+
+function openWin() {
+    myWindow = window.open("", "myWindow");
+}
+
+
+function Starttime() {
+var f = new Date();
+var st=f.toLocaleTimeString();
+    document.getElementById("demo2").innerHTML =st;
+}
+
+function Stoptime() {
+clearInterval(myVar); 
+var e = new Date();
+var td=e.toLocaleTimeString();
+    
+ document.getElementById("demo1").innerHTML =td;
+}
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+var t=d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML =t;
+}
+
+
+
+
+
+var duration = moment.duration(td.diff(st));
+var hours = duration.asHours();
+
+console.log('duration');
+
+p = "1/1/1970 ";
+
+difference = new Date(new Date(p+td) - new Date(p+st)).toUTCString().split(" ")[4];
+alert( difference );
+
+
+</script>
+</body>
+</html>
